@@ -24,7 +24,7 @@ if [ -d "$HOME/bin/scripts" ] ; then
     PATH="$HOME/bin/scripts:$PATH"
 fi
 
-alias tmux="TERM=screen-256color-bce tmux attach"
+alias tmux="tmux attach ||  tmux"
 alias mount='mount |column -t'
 alias h='history'
 alias j='jobs -l'
