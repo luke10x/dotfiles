@@ -20,12 +20,16 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+if [ -d "$HOME/bin/scripts" ] ; then
+    PATH="$HOME/bin/scripts:$PATH"
+fi
 
 alias tmux="TERM=screen-256color-bce tmux attach"
 alias mount='mount |column -t'
 alias h='history'
 alias j='jobs -l'
 alias tb="nc termbin.com 9999"
+alias screengur="scrot -se 'imgurbash.sh \$f'"
 
 [[ $TMUX = "" ]] && export TERM='xterm-256color'
 export JDK_HOME=/opt/icedtea-bin-7.2.6.1

@@ -12,3 +12,5 @@ ln --backup -s $SCRIPT_DIR/.bashrc ~/.bashrc
 ln --backup -s $SCRIPT_DIR/.profile ~/.profile
 ln --backup -s $SCRIPT_DIR/.tmux.conf ~/.tmux.conf
 
+mkdir ~/bin -p
+ln --backup -sn $SCRIPT_DIR/bin/scripts ~/bin/scripts
