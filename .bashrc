@@ -38,6 +38,7 @@ alias j='jobs -l'
 alias tb="nc termbin.com 9999"
 alias screengur="scrot -se 'imgurbash.sh \$f'"
 alias mostmem="ps -e -o pid,vsz,comm= | sort -n -k 2"
+alias docker-sync='rsync -e "docker exec -i" --blocking-io -avz --delete --no-perms --no-owner --no-group --checksum --no-times --itemize-changes'
 
 force_color_prompt=yes
 if [ -x /usr/bin/dircolors ]; then
@@ -51,7 +52,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 [[ $TMUX = "" ]] && export TERM='xterm-256color'
-export PS1='\[\033]0;\u@\h:\w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+export PS1='$(if [ "$DOCKER_HOST" ]; then echo "($DOCKER_HOST) "; fi)\[\033]0;\u@\h:\w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 
 export JDK_HOME=/opt/icedtea-bin-7.2.6.1
 export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n"
@@ -59,3 +60,5 @@ export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt
 export VISUAL=vim
 export EDITOR=vim
 export ENVIRONMENT=DEVELOPMENT
+export DOCKER_API_VERSION=1.21 # 1.22 for the new stuff
+
