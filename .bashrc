@@ -55,6 +55,8 @@ fi
 export PS1='$(if [ "$DOCKER_HOST" ]; then echo "($DOCKER_HOST) "; fi)\[\033]0;\u@\h:\w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 
 export JDK_HOME=/opt/icedtea-bin-7.2.6.1
+export JDK_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-4.b10.fc27.x86_64
+
 export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n"
 
 export VISUAL=vim
