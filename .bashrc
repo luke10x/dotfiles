@@ -24,6 +24,12 @@ fi
 #if [ -d "$HOME/.gem/ruby/2.0.0/bin" ] ; then
     #PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
 #fi
+if [ -d "$HOME/.virtualenv/" ] ; then
+    source $HOME/.virtualenv/bin/activate
+fi
+if [ -d "$HOME/.nodeenv/" ] ; then
+    source $HOME/.nodeenv/bin/activate
+fi
 if [ -d "$HOME/workspace/gocode" ] ; then
     GOPATH=$HOME/workspace/gocode
 fi
@@ -54,11 +60,16 @@ fi
 [[ $TMUX = "" ]] && export TERM='xterm-256color'
 export PS1='$(if [ "$DOCKER_HOST" ]; then echo "($DOCKER_HOST) "; fi)\[\033]0;\u@\h:\w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 
-export JDK_HOME=/opt/icedtea-bin-7.2.6.1
+#export JDK_HOME=/opt/icedtea-bin-7.2.6.1
+export JDK_HOME=~/opt/jdk1.8.0_181
+if [ -d "$JDK_HOME/bin" ] ; then
+    PATH="$JDK_HOME/bin:$PATH"
+fi
+#export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n -DsocksProxyHost=0.0.0.0 -DsocksProxyPort=8910"
 export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n"
 
 export VISUAL=vim
 export EDITOR=vim
 export ENVIRONMENT=DEVELOPMENT
-export DOCKER_API_VERSION=1.21 # 1.22 for the new stuff
+export DOCKER_API_VERSION=1.25 # 1.22 for the new stuff
 
