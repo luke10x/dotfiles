@@ -1,0 +1,15 @@
+{
+    "editor.cursorStyle": "block",
+    "editor.folding": false,
+    "editor.fontFamily":"'Fira Mono', 'Noto Mono','Noto Color Emoji', 'Droid Sans Fallback'",
+    "editor.fontSize": 18,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "terminal.integrated.fontFamily": "'Fira Mono', 'Noto Mono','Noto Color Emoji', 'Droid Sans Fallback'",
+    "terminal.integrated.fontSize": 14,
+    "workbench.activityBar.visible": true,
+    "workbench.colorTheme": "Quiet Light",
+    "workbench.tree.indent": 32,
+    "workbench.tree.renderIndentGuides": "always",
+    "window.zoomLevel": 1
+}
