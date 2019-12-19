@@ -1,5 +1,5 @@
 {
-    "editor.cursorStyle": "block",
+    "editor.cursorStyle":"line",
     "editor.folding": false,
     "editor.fontFamily":"'Fira Mono', 'Noto Mono','Noto Color Emoji', 'Droid Sans Fallback'",
     "editor.fontSize": 18,
