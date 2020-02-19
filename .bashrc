@@ -86,3 +86,4 @@ export EDITOR=vim
 export ENVIRONMENT=DEVELOPMENT
 export DOCKER_API_VERSION=1.25 # 1.22 for the new stuff
 
+export PATH=$HOME/local/bin:$PATH
