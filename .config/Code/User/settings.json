@@ -13,6 +13,7 @@
     "workbench.tree.indent": 32,
     "workbench.tree.renderIndentGuides": "always",
     "window.zoomLevel": 0,
+    "editor.tabSize": 2,
 
     "window.titleBarStyle": "custom",
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -23,13 +24,20 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "typescript.updateImportsOnFileMove.enabled": "never",
+    "terminal.integrated.rendererType": "dom",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode""
+    },
 }
