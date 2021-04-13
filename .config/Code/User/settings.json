@@ -1,43 +1,78 @@
 {
     "editor.cursorStyle":"line",
+    "editor.cursorWidth": 4,
     "editor.folding": false,
     "editor.fontFamily":"'Fira Mono', 'Noto Mono','Noto Color Emoji', 'Droid Sans Fallback'",
-    "editor.fontSize": 14,
+    "editor.fontSize": 16,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.tabCompletion": "off",
+    "editor.hideCursorInOverviewRuler": false,
+    "editor.hover.enabled": false, // Use Ctrl+K Ctlr+I
+    "editor.hover.sticky": true,
+    "editor.renderIndentGuides": true,
+    "editor.lineNumbers": "on",
     "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "all",
+    "editor.renderWhitespace": "selection",
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "html.autoClosingTags": false,
+    "html.format.enable": false,
+    "html.validate.scripts": false,
+    "html.suggest.html5": false,
+    "html.format.extraLiners": "",
     "terminal.integrated.fontFamily": "'Fira Mono', 'Noto Mono','Noto Color Emoji', 'Droid Sans Fallback'",
-    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontSize": 16,
     "workbench.activityBar.visible": true,
-    // "workbench.colorTheme": "Quiet Light",
-    "workbench.colorTheme": "IDEA like light Theme",
     "workbench.tree.indent": 32,
     "workbench.tree.renderIndentGuides": "always",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 3,
     "editor.tabSize": 2,
-
-    "window.titleBarStyle": "custom",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "go.autocompleteUnimportedPackages": true,
-    "go.gopath": "/home/lape/workspace/go",
-    "go.formatTool": "gofmt",
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false
+      },
+    "window.titleBarStyle": "custom",
+    "breadcrumbs.enabled": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorTheme": "Verdandi",
+
+    "editor.occurrencesHighlight": false,
+    "editor.matchBrackets": "never",
+    "editor.lightbulb.enabled": false,
+
+    "workbench.colorCustomizations": {
+        "[Solarized Light]": {
+            "editorGutter.background": "#f6f0dd",
+            "editorLineNumber.foreground": "#c5c5c5"
+        },
+        "[Quiet Light]": {
+            // "editorGutter.background": "#f9f9f9"
+            // "editorGutter.background": "#ededf5",
+            "editorLineNumber.foreground": "#c5c5c590"
+        },
+        "[Verdandi]": {
+            "editorLineNumber.foreground": "#e0e0e0",
+            // "activityBar.background": "#00AA00"
+            "menu.border": "#329af0",
+            "editorIndentGuide.background": "#f0f0f0",
+            "editorIndentGuide.activeBackground": "#f0f0f0",
+        }
     },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "workbench.iconTheme": "verdandi",
+    "files.associations": {
+        "*.js": "javascript"
     },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "typescript.updateImportsOnFileMove.enabled": "never",
-    "terminal.integrated.rendererType": "dom",
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode""
-    },
+
+
+    // Settings only for video
+    "editor.quickSuggestions": false,
+    "editor.quickSuggestionsDelay": 10000, // in 10 sec
+    "editor.selectionHighlight": false,
+    "git.enabled": false,
+    "editor.renderWhitespace": "none"
 }
+
+/*
+Ctrl+0 Ctrl+0 will open files window
+Ctrl+b closes
+*/
