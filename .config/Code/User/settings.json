@@ -52,7 +52,6 @@
         },
         "[Verdandi]": {
             "editorLineNumber.foreground": "#e0e0e0",
-            // "activityBar.background": "#00AA00"
             "menu.border": "#329af0",
             "editorIndentGuide.background": "#f0f0f0",
             "editorIndentGuide.activeBackground": "#f0f0f0",
