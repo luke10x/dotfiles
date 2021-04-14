@@ -2,7 +2,7 @@
     "editor.cursorStyle":"line",
     "editor.cursorWidth": 4,
     "editor.folding": false,
-    "editor.fontFamily":"'Fira Mono', 'Noto Mono','Noto Color Emoji', 'Droid Sans Fallback'",
+    "editor.fontFamily":"'Fira Mono', 'Noto Mono', 'Monospace', 'Noto Color Emoji', 'Droid Sans Fallback',",
     "editor.fontSize": 16,
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.acceptSuggestionOnEnter": "on",
@@ -20,12 +20,12 @@
     "html.validate.scripts": false,
     "html.suggest.html5": false,
     "html.format.extraLiners": "",
-    "terminal.integrated.fontFamily": "'Fira Mono', 'Noto Mono','Noto Color Emoji', 'Droid Sans Fallback'",
+    "terminal.integrated.fontFamily": "'Fira Mono', 'Noto Mono', 'Monospace', 'Noto Color Emoji', 'Droid Sans Fallback'",
     "terminal.integrated.fontSize": 16,
     "workbench.activityBar.visible": true,
     "workbench.tree.indent": 32,
     "workbench.tree.renderIndentGuides": "always",
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 1,
     "editor.tabSize": 2,
     "[javascript]": {
         "editor.tabSize": 2,
@@ -62,13 +62,15 @@
         "*.js": "javascript"
     },
 
-
     // Settings only for video
-    "editor.quickSuggestions": false,
-    "editor.quickSuggestionsDelay": 10000, // in 10 sec
-    "editor.selectionHighlight": false,
-    "git.enabled": false,
-    "editor.renderWhitespace": "none"
+    // "editor.quickSuggestions": false,
+    // "editor.quickSuggestionsDelay": 10000, // in 10 sec
+    // "editor.selectionHighlight": false,
+    // "git.enabled": false,
+    // "editor.renderWhitespace": "none",
+    // "window.zoomLevel": 3,
+    // End: Settings only for video
+    
 }
 
 /*
