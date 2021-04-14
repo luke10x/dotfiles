@@ -2,7 +2,7 @@
     "editor.cursorStyle":"line",
     "editor.cursorWidth": 4,
     "editor.folding": false,
-    "editor.fontFamily":"'Fira Mono', 'Noto Mono', 'Monospace', 'Noto Color Emoji', 'Droid Sans Fallback',",
+    "editor.fontFamily":"'Fira Mono', 'Noto Mono', 'Monospace', 'Noto Color Emoji', 'Droid Sans Fallback'",
     "editor.fontSize": 16,
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.acceptSuggestionOnEnter": "on",
