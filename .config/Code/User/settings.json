@@ -1,4 +1,7 @@
 {
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
     "editor.cursorStyle":"line",
     "editor.cursorWidth": 4,
     "editor.folding": false,
@@ -13,7 +16,6 @@
     "editor.renderIndentGuides": true,
     "editor.lineNumbers": "on",
     "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "selection",
     "editor.autoClosingBrackets": "beforeWhitespace",
     "html.autoClosingTags": false,
     "html.format.enable": false,
@@ -22,10 +24,8 @@
     "html.format.extraLiners": "",
     "terminal.integrated.fontFamily": "'Fira Mono', 'Noto Mono', 'Monospace', 'Noto Color Emoji', 'Droid Sans Fallback'",
     "terminal.integrated.fontSize": 16,
-    "workbench.activityBar.visible": true,
     "workbench.tree.indent": 32,
     "workbench.tree.renderIndentGuides": "always",
-    "window.zoomLevel": 1,
     "editor.tabSize": 2,
     "[javascript]": {
         "editor.tabSize": 2,
@@ -55,6 +55,27 @@
             "menu.border": "#329af0",
             "editorIndentGuide.background": "#f0f0f0",
             "editorIndentGuide.activeBackground": "#f0f0f0",
+            "terminal.ansiBlack": "#000000",
+            "terminal.ansiBlue": "#2472c8",
+            "terminal.ansiBrightBlack": "#666666",
+            "terminal.ansiBrightBlue": "#3b8eea",
+            "terminal.ansiBrightCyan": "#29b8db",
+            "terminal.ansiBrightGreen": "#23d18b",
+            "terminal.ansiBrightMagenta": "#d670d6",
+            "terminal.ansiBrightRed": "#f14c4c",
+            "terminal.ansiBrightWhite": "#e5e5e5",
+            "terminal.ansiBrightYellow": "#f5f543",
+            "terminal.ansiCyan": "#11a8cd",
+            "terminal.ansiGreen": "#0dbc79",
+            "terminal.ansiMagenta": "#bc3fbc",
+            "terminal.ansiRed": "#cd3131",
+            "terminal.ansiWhite": "#e5e5e5",
+            "terminal.ansiYellow": "#e5e510",
+            // "terminal.border": "#80808059",
+            "terminal.border": "#f00",
+            "terminal.foreground": "#cccccc",
+            "terminal.background": "#333333",
+            "terminal.selectionBackground": "#ffffff40",
         }
     },
     "workbench.iconTheme": "verdandi",
@@ -62,15 +83,24 @@
         "*.js": "javascript"
     },
 
+    // May be changed often
+    "window.zoomLevel": 2,
+    "editor.renderWhitespace": "none",
+
     // Settings only for video
-    // "editor.quickSuggestions": false,
-    // "editor.quickSuggestionsDelay": 10000, // in 10 sec
-    // "editor.selectionHighlight": false,
+    "editor.quickSuggestions": false,
+    "editor.quickSuggestionsDelay": 10000, // in 10 sec
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.selectionHighlight": false,
     // "git.enabled": false,
-    // "editor.renderWhitespace": "none",
-    // "window.zoomLevel": 3,
+    "workbench.statusBar.visible": false,
+    "debug.showBreakpointsInOverviewRuler": false,
+    "debug.showInlineBreakpointCandidates": false,
+    "debug.allowBreakpointsEverywhere": false,
+    "workbench.activityBar.visible": false,
+    "editor.parameterHints.enabled": false,
+    "editor.suggest.showTypeParameters": false
     // End: Settings only for video
-    
 }
 
 /*
