@@ -85,20 +85,17 @@
     "window.zoomLevel": 3,
     "editor.renderWhitespace": "none",
 
-    // Settings only for video
-    "editor.quickSuggestions": false,
-    "editor.quickSuggestionsDelay": 10000, // in 10 sec
-    "editor.suggestOnTriggerCharacters": false,
-    "editor.selectionHighlight": false,
-    "git.enabled": false,
-    "workbench.statusBar.visible": false,
-    "debug.showBreakpointsInOverviewRuler": false,
-    "debug.showInlineBreakpointCandidates": false,
-    "debug.allowBreakpointsEverywhere": false,
-    "workbench.activityBar.visible": false,
-    "editor.parameterHints.enabled": false,
-    "editor.suggest.showTypeParameters": false
-    // End: Settings only for video
+    // Settings only for video ::::::::::::::::::::::::::::::::
+    // "editor.quickSuggestions": false,
+    // "editor.quickSuggestionsDelay": 10000, // in 10 sec
+    // "editor.suggestOnTriggerCharacters": false,
+    // "editor.selectionHighlight": false,
+    // "git.enabled": false,
+    // "workbench.statusBar.visible": false,
+    // "workbench.activityBar.visible": false,
+    // "editor.parameterHints.enabled": false,
+    // "editor.suggest.showTypeParameters": false
+    // End: Settings only for video :::::::::::::::::::::::::::
 }
 
 /*
