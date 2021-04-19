@@ -14,16 +14,22 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+# Local changes fro this PC go here
+if [[ -f "$HOME/.bashrc.local" && -r "$HOME/.bashrc.local" ]] ; then
+    source "$HOME/.bashrc.local"
+fi
+
 # Put your fun stuff here.
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
 if [ -d "$HOME/bin/scripts" ] ; then
     PATH="$HOME/bin/scripts:$PATH"
 fi
-#if [ -d "$HOME/.gem/ruby/2.0.0/bin" ] ; then
-    #PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
-#fi
+
+# export PATH=$HOME/local/bin:$PATH
+
 if [ -d "$HOME/workspace/go" ] ; then
     GOPATH=$HOME/workspace/go
 fi
@@ -43,6 +49,15 @@ fi
 if [ -d "$HOME/opt/go" ] ; then
     PATH=$PATH:$HOME/opt/go/bin
 fi
+
+if [ -d "$JDK_HOME/bin" ] ; then
+    PATH="$JDK_HOME/bin:$PATH"
+fi
+
+if [ -d "$MAVEN_HOME/bin" ] ; then
+    PATH="$MAVEN_HOME/bin:$PATH"
+fi
+
 
 alias tmux="tmux attach ||  tmux"
 alias mount='mount |column -t'
@@ -67,23 +82,8 @@ fi
 [[ $TMUX = "" ]] && export TERM='xterm-256color'
 export PS1='$(if [ "$DOCKER_HOST" ]; then echo "($DOCKER_HOST) "; fi)\[\033]0;\u@\h:\w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 
-export JDK_HOME=/opt/icedtea-bin-7.2.6.1
-export JDK_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-4.b10.fc27.x86_64
-export JDK_HOME=~/opt/jdk-8u181-linux-x64/jdk1.8.0_181/
-export JAVA_HOME=~/opt/jdk-8u181-linux-x64/jdk1.8.0_181/jre
-export JDK_HOME=/opt/icedtea-bin-7.2.6.1
-export JDK_HOME=~/opt/jdk1.8.0_181
-
-if [ -d "$JDK_HOME/bin" ] ; then
-    PATH="$JDK_HOME/bin:$PATH"
-fi
-
-#export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n -DsocksProxyHost=0.0.0.0 -DsocksProxyPort=8910"
-export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n"
-
 export VISUAL=vim
 export EDITOR=vim
 export ENVIRONMENT=DEVELOPMENT
 export DOCKER_API_VERSION=1.25 # 1.22 for the new stuff
 
-export PATH=$HOME/local/bin:$PATH
