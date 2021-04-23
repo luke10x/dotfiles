@@ -50,6 +50,10 @@ if [ -d "$HOME/opt/go" ] ; then
     PATH=$PATH:$HOME/opt/go/bin
 fi
 
+if [ -d "$HOME/opt/neovim/bin" ] ; then
+    PATH=$PATH:$HOME/opt/neovim/bin
+fi
+
 if [ -d "$JDK_HOME/bin" ] ; then
     PATH="$JDK_HOME/bin:$PATH"
 fi
