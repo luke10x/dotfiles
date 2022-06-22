@@ -12,7 +12,6 @@
     "editor.hideCursorInOverviewRuler": false,
     "editor.hover.enabled": false, // Use Ctrl+K Ctlr+I
     "editor.hover.sticky": true,
-    "editor.renderIndentGuides": true,
     "editor.lineNumbers": "on",
     "editor.minimap.enabled": false,
     "editor.autoClosingBrackets": "beforeWhitespace",
@@ -84,6 +83,7 @@
     // May be changed often
     "window.zoomLevel": 3,
     "editor.renderWhitespace": "none",
+    "editor.guides.indentation": true,
 
     // Settings only for video ::::::::::::::::::::::::::::::::
     // "editor.quickSuggestions": false,
