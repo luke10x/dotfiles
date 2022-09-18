@@ -5,7 +5,7 @@
     "editor.cursorStyle":"line",
     "editor.cursorWidth": 4,
     "editor.folding": false,
-    "editor.fontFamily": "'Fira Mono', 'Noto Mono', 'Monospace', 'Noto Color Emoji', 'Droid Sans Fallback'",
+    // "editor.fontFamily": "'Fira Mono', 'Noto Mono', 'Monospace', 'Noto Color Emoji', 'Droid Sans Fallback'",
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.acceptSuggestionOnEnter": "on",
     "editor.tabCompletion": "off",
@@ -20,7 +20,7 @@
     "html.validate.scripts": false,
     "html.suggest.html5": false,
     "html.format.extraLiners": "",
-    "terminal.integrated.fontFamily": "'Fira Mono', 'Noto Mono', 'Monospace', 'Noto Color Emoji', 'Droid Sans Fallback'",
+    // "terminal.integrated.fontFamily": "monospace",
     "workbench.tree.indent": 32,
     "workbench.tree.renderIndentGuides": "always",
     "editor.tabSize": 2,
@@ -81,9 +81,10 @@
     },
 
     // May be changed often
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 1,
     "editor.renderWhitespace": "none",
     "editor.guides.indentation": true,
+    "redhat.telemetry.enabled": true,
 
     // Settings only for video ::::::::::::::::::::::::::::::::
     // "editor.quickSuggestions": false,
