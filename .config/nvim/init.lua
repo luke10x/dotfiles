@@ -16,4 +16,3 @@ require("luke.plugins.lsp.null-ls")
 require("luke.plugins.autopairs")
 require("luke.plugins.treesitter")
 require("luke.plugins.gitsigns")
-

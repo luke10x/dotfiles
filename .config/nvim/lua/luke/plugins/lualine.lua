@@ -1,7 +1,7 @@
 local status, lualine = pcall(require, "lualine")
 if not status then
-  print("Lualine desired but not included")
-  return
+	print("Lualine desired but not included")
+	return
 end
 
 -- get lualine nightfly theme
@@ -34,4 +34,3 @@ lualine.setup({
 		theme = lualine_nightfly,
 	},
 })
-
