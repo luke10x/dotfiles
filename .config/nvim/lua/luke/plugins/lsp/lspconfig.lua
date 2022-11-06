@@ -1,6 +1,7 @@
 -- import lspconfig plugin safely
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
+  print("lspconfig is desired however not installed")
 	return
 end
 
@@ -56,94 +57,82 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- configure html server
--- lspconfig["html"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
+local util = lspconfig.util
 
--- configure typescript server with plugin
--- typescript.setup({
--- 	server = {
--- 		capabilities = capabilities,
--- 		on_attach = on_attach,
--- 	},
--- })
-
--- configure css server
--- lspconfig["cssls"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
-
--- configure tailwindcss server
--- lspconfig["tailwindcss"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
+require'lspconfig'.html.setup {
+  before_init = function(params)
+    params.processId = vim.NIL
+  end,
+  cmd = require'lspcontainers'.command('html'),
+  root_dir = util.root_pattern(".git", vim.fn.getcwd()),
+}
 
 
--- local config = {
---     cmd = {'/Users/luke/opt/jdt-language-server-1.9.0-202203031534/bin/jdtls'},
---     root_dir = vim.fs.dirname(vim.fs.find(
---       {'.gradlew', '.git', 'mvnw', 'ivy.xml', 'pom.xml'},
---       { upward = true }
---     )[1]),
--- }
--- require('jdtls').start_or_attach(config)
-
-  -- cmd = {"/usr/bin/python3", "/Users/luke/opt/jdt-language-server-1.9.0-202203031534/bin/jdtls.py"},
--- require'lspconfig'.jdtls.setup{
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
---   cmd = {
---     "/usr/bin/python3",
---     "/Users/luke/opt/jdt-language-server-1.9.0-202203031534/bin/jdtls.py"
---   },
---   root_dir = require'lspconfig/util'.root_pattern(".git", "ivy.xml", "pom.xml"),
--- }
-
--- require'lspconfig'.tsserver.setup {
---   before_init = function(params)
---     params.processId = vim.NIL
---   end,
---   -- cmd = require'lspcontainers'.command('tsserver'),
---   cmd = require'lspcontainers'.command('tsserver', {
---         image = "node",
---         cmd = function (runtime, volume, image)
---       return {
---         runtime,
---         "container",
---         "run",
---         "--interactive",
---         "--rm",
---         "--volume",
---         volume,
---         image
---       }
---     end
---   }),
---   root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
---   -- ...
--- }
+require'lspconfig'.tsserver.setup {
+  before_init = function(params)
+    params.processId = vim.NIL
+  end,
+  -- cmd = require'lspcontainers'.command('tsserver'),
+  cmd = require'lspcontainers'.command('tsserver', {
+        image = "tsserver",
+        cmd = function (runtime, volume, image)
+      return {
+        runtime,
+        "container",
+        "run",
+        "--interactive",
+        "--rm",
+        "--volume",
+        volume,
+        image
+      }
+    end
+  }),
+  root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+}
 
 -- configure lua server (with special settings)
--- lspconfig["sumneko_lua"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- 	settings = { -- custom settings for lua
--- 		Lua = {
--- 			-- make the language server recognize "vim" global
--- 			diagnostics = {
--- 				globals = { "vim" },
--- 			},
--- 			workspace = {
--- 				-- make language server aware of runtime files
--- 				library = {
--- 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
--- 					[vim.fn.stdpath("config") .. "/lua"] = true,
--- 				},
--- 			},
--- 		},
--- 	},
--- })
+lspconfig["sumneko_lua"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+  cmd = require'lspcontainers'.command('sumneko_lua', {
+        -- locally built with `docker-compose build sumneko_lua`
+        image = "lspcontainers/lua-language-server",
+        cmd = function (runtime, volume, image)
+        return {
+          runtime,
+          "container",
+          "run",
+          "--interactive",
+          "--rm",
+          "--volume",
+          volume,
+          image
+        }
+      end
+  }),
+	settings = { -- custom settings for lua
+		Lua = {
+			-- make the language server recognize "vim" global
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				-- make language server aware of runtime files
+				library = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.stdpath("config") .. "/lua"] = true,
+				},
+			},
+		},
+	},
+})
+
+-- so far cannot get it working
+require'lspconfig'.gopls.setup {
+  cmd = require'lspcontainers'.command('gopls'),
+}
+
+require'lspconfig'.clangd.setup {
+  cmd = require'lspcontainers'.command('clangd'),
+}
