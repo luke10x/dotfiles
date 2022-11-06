@@ -11,10 +11,10 @@ if not cmp_nvim_lsp_status then
 end
 
 -- import typescript plugin safely
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
-	return
-end
+-- local typescript_setup, typescript = pcall(require, "typescript")
+-- if not typescript_setup then
+-- 	return
+-- end
 
 local keymap = vim.keymap -- for conciseness
 
@@ -57,48 +57,93 @@ for type, icon in pairs(signs) do
 end
 
 -- configure html server
-lspconfig["html"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- lspconfig["html"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
 
 -- configure typescript server with plugin
-typescript.setup({
-	server = {
-		capabilities = capabilities,
-		on_attach = on_attach,
-	},
-})
+-- typescript.setup({
+-- 	server = {
+-- 		capabilities = capabilities,
+-- 		on_attach = on_attach,
+-- 	},
+-- })
 
 -- configure css server
-lspconfig["cssls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- lspconfig["cssls"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
 
 -- configure tailwindcss server
-lspconfig["tailwindcss"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- lspconfig["tailwindcss"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
+
+
+-- local config = {
+--     cmd = {'/Users/luke/opt/jdt-language-server-1.9.0-202203031534/bin/jdtls'},
+--     root_dir = vim.fs.dirname(vim.fs.find(
+--       {'.gradlew', '.git', 'mvnw', 'ivy.xml', 'pom.xml'},
+--       { upward = true }
+--     )[1]),
+-- }
+-- require('jdtls').start_or_attach(config)
+
+  -- cmd = {"/usr/bin/python3", "/Users/luke/opt/jdt-language-server-1.9.0-202203031534/bin/jdtls.py"},
+-- require'lspconfig'.jdtls.setup{
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+--   cmd = {
+--     "/usr/bin/python3",
+--     "/Users/luke/opt/jdt-language-server-1.9.0-202203031534/bin/jdtls.py"
+--   },
+--   root_dir = require'lspconfig/util'.root_pattern(".git", "ivy.xml", "pom.xml"),
+-- }
+
+-- require'lspconfig'.tsserver.setup {
+--   before_init = function(params)
+--     params.processId = vim.NIL
+--   end,
+--   -- cmd = require'lspcontainers'.command('tsserver'),
+--   cmd = require'lspcontainers'.command('tsserver', {
+--         image = "node",
+--         cmd = function (runtime, volume, image)
+--       return {
+--         runtime,
+--         "container",
+--         "run",
+--         "--interactive",
+--         "--rm",
+--         "--volume",
+--         volume,
+--         image
+--       }
+--     end
+--   }),
+--   root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+--   -- ...
+-- }
 
 -- configure lua server (with special settings)
-lspconfig["sumneko_lua"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = { -- custom settings for lua
-		Lua = {
-			-- make the language server recognize "vim" global
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				-- make language server aware of runtime files
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.stdpath("config") .. "/lua"] = true,
-				},
-			},
-		},
-	},
-})
+-- lspconfig["sumneko_lua"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	settings = { -- custom settings for lua
+-- 		Lua = {
+-- 			-- make the language server recognize "vim" global
+-- 			diagnostics = {
+-- 				globals = { "vim" },
+-- 			},
+-- 			workspace = {
+-- 				-- make language server aware of runtime files
+-- 				library = {
+-- 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+-- 					[vim.fn.stdpath("config") .. "/lua"] = true,
+-- 				},
+-- 			},
+-- 		},
+-- 	},
+-- })

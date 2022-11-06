@@ -62,6 +62,10 @@ if [ -d "$MAVEN_HOME/bin" ] ; then
     PATH="$MAVEN_HOME/bin:$PATH"
 fi
 
+if [ -d "$GRADLE_HOME/bin" ] ; then
+    PATH="$GRADLE_HOME/bin:$PATH"
+fi
+
 
 alias tmux="tmux attach ||  tmux"
 alias mount='mount |column -t'
