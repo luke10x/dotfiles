@@ -1,7 +1,7 @@
 -- import lspconfig plugin safely
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
-  print("lspconfig is desired however not installed")
+	print("lspconfig is desired however not installed")
 	return
 end
 
@@ -59,58 +59,57 @@ end
 
 local util = lspconfig.util
 
-require'lspconfig'.html.setup {
-  before_init = function(params)
-    params.processId = vim.NIL
-  end,
-  cmd = require'lspcontainers'.command('html'),
-  root_dir = util.root_pattern(".git", vim.fn.getcwd()),
-}
+require("lspconfig").html.setup({
+	before_init = function(params)
+		params.processId = vim.NIL
+	end,
+	cmd = require("lspcontainers").command("html"),
+	root_dir = util.root_pattern(".git", vim.fn.getcwd()),
+})
 
-
-require'lspconfig'.tsserver.setup {
-  before_init = function(params)
-    params.processId = vim.NIL
-  end,
-  -- cmd = require'lspcontainers'.command('tsserver'),
-  cmd = require'lspcontainers'.command('tsserver', {
-        image = "tsserver",
-        cmd = function (runtime, volume, image)
-      return {
-        runtime,
-        "container",
-        "run",
-        "--interactive",
-        "--rm",
-        "--volume",
-        volume,
-        image
-      }
-    end
-  }),
-  root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-}
+require("lspconfig").tsserver.setup({
+	before_init = function(params)
+		params.processId = vim.NIL
+	end,
+	-- cmd = require'lspcontainers'.command('tsserver'),
+	cmd = require("lspcontainers").command("tsserver", {
+		image = "tsserver",
+		cmd = function(runtime, volume, image)
+			return {
+				runtime,
+				"container",
+				"run",
+				"--interactive",
+				"--rm",
+				"--volume",
+				volume,
+				image,
+			}
+		end,
+	}),
+	root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+})
 
 -- configure lua server (with special settings)
 lspconfig["sumneko_lua"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-  cmd = require'lspcontainers'.command('sumneko_lua', {
-        -- locally built with `docker-compose build sumneko_lua`
-        image = "lspcontainers/lua-language-server",
-        cmd = function (runtime, volume, image)
-        return {
-          runtime,
-          "container",
-          "run",
-          "--interactive",
-          "--rm",
-          "--volume",
-          volume,
-          image
-        }
-      end
-  }),
+	cmd = require("lspcontainers").command("sumneko_lua", {
+		-- locally built with `docker-compose build sumneko_lua`
+		image = "lspcontainers/lua-language-server",
+		cmd = function(runtime, volume, image)
+			return {
+				runtime,
+				"container",
+				"run",
+				"--interactive",
+				"--rm",
+				"--volume",
+				volume,
+				image,
+			}
+		end,
+	}),
 	settings = { -- custom settings for lua
 		Lua = {
 			-- make the language server recognize "vim" global
@@ -129,10 +128,12 @@ lspconfig["sumneko_lua"].setup({
 })
 
 -- so far cannot get it working
-require'lspconfig'.gopls.setup {
-  cmd = require'lspcontainers'.command('gopls'),
-}
+require("lspconfig").gopls.setup({
+	cmd = require("lspcontainers").command("gopls"),
+})
 
-require'lspconfig'.clangd.setup {
-  cmd = require'lspcontainers'.command('clangd'),
-}
+require("lspconfig").clangd.setup({
+	cmd = require("lspcontainers").command("clangd", {
+		network = "bridge",
+	}),
+})

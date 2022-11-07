@@ -9,6 +9,8 @@ java \
   -Dlog.level=ALL \
   -Xms1g \
   -Xmx2G \
+  -javaagent:$HOME/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar \
+  -Xbootclasspath/a:$HOME/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar \
   -jar $(echo "$JAR") \
   -configuration "$HOME/opt/jdt-language-server-1.9.0-202203031534/config_mac" \
   -data "$1" \
